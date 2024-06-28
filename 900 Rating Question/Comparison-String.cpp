@@ -45,6 +45,25 @@ double eps = 1e-12;
 #define sz(x) ((ll)(x).size())
 int main(){
     fast_cin();
-    
+    int t;
+    cin>>t;
+    while(t--){
+        int n;
+        cin>>n;
+        string s;
+        cin>>s;
+        int v=1;int ans=1;
+        for(int i=1;i<n;i++){
+            if(s[i]==s[i-1]){
+                v++;
+            }
+            else{
+                ans=max(ans,v);
+                v=1;
+            }
+        }
+        ans=max(v,ans);
+        cout<<ans+1<<"\n";
+    }
     return 0;
 }
