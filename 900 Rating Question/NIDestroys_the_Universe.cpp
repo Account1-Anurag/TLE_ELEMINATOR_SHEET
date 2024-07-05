@@ -70,33 +70,30 @@ int main()
         for (int i = 0; i < n; i++)
         {
             cin >> arr[i];
-            if (arr[i] == 0)
-            {
-                c++;
+        }
+        if(n==1){
+            if(arr[0]!=0){
+                cout<<"1\n";
+                continue;
+            }
+            else{
+                cout<<"0\n";
+                continue;
             }
         }
-        if (c == 0)
+        int ans = 0;
+        if(arr[0]!=0){
+            ans++;
+        }
+        for (int i = 1; i < n; i++)
         {
-            cout << "1\n";
-        }
-        else
-        {
-            int ans = 0;
-            if (arr[0] != 0 && arr[n - 1] != 0)
+            if (arr[i] != 0 && arr[i - 1] == 0)
             {
-                ans = 2;
-            }else if(arr[0] != 0 || arr[n - 1] != 0){
-                ans=1;
+                ans++;
             }
-            for(int i=1;i<n;i++){
-                if(arr[i]!=0&&arr[i-1]==0){
-                    ans++;
-                }
-            }
-            cout<<ans<<"\n";
-
-
         }
+        cout << min(ans,2) << "\n";
     }
     return 0;
 }
+
