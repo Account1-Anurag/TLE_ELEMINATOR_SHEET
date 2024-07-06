@@ -59,26 +59,36 @@ double eps = 1e-12;
 int main()
 {
     fast_cin();
-    int tc;
-    cin >> tc;
-    while (tc--)
+    int t;
+    cin >> t;
+    while (t--)
     {
-        ll n, min;
+        ll n;
         cin >> n;
-        if (n % 2 or n < 4)
+        ll arr[n];
+        for (ll i = 0; i < n; i++)
         {
-            cout << -1 << endl;
-            continue;
-        }
-        ll max = n / 4;
-        ll six = n / 6;
-        if (n % 6 == 0)
-            min = six;
-        else
+            cin >> arr[i];
+    }
+        int c = 0;
+        for (int i = n - 1; i > 0; i--)
         {
-            min = six + 1;
+            if (arr[i - 1] >= arr[i])
+            {
+                if (arr[i] == 0)
+                {
+                    c = -1;
+                    break;
+                }
+                while (arr[i - 1] >= arr[i])
+                {
+                    arr[i - 1] = arr[i - 1] / 2;
+                    c++;
+                }
+            }
         }
-        cout << min << " " << max << endl;
+
+        cout << c << "\n";
     }
     return 0;
 }
