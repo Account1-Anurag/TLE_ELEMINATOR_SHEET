@@ -48,12 +48,15 @@ int main(){
     int t;
     cin>>t;
     while(t--){
+    
         string p,q;
         cin>>p>>q;
         int n=p.length();
         int m=q.length();
         for(int i=m-1;i>=0;i++){
-            for(int j=n-1;j>=0;j++)
+            for(int j=n-1;j>=0;j++){
+                
+            }
         }
     }
     return 0;
