@@ -1,4 +1,4 @@
-#include <bits/stdc++.h> 
+#include <bits/stdc++.h>
 #include <complex>
 #include <queue>
 #include <set>
@@ -20,44 +20,71 @@ using namespace std;
 
 typedef long long ll;
 typedef long double ld;
-typedef pair<ll,ll> p64;
-typedef pair<double,double> pdd;
+typedef pair<ll, ll> p64;
+typedef pair<double, double> pdd;
 typedef vector<ll> v64;
-typedef vector<vector<ll> > vv64;
-typedef vector<vector<p64> > vvp64;
+typedef vector<vector<ll>> vv64;
+typedef vector<vector<p64>> vvp64;
 typedef vector<p64> vp64;
 ll MOD = 998244353;
 double eps = 1e-12;
-#define forn(i,n) for(ll i = 0; i < n; i++)
-#define forsn(i,s,e) for(ll i = s; i < e; i++)
-#define rforn(i,s) for(ll i = s; i >= 0; i--)
-#define rforsn(i,s,e) for(ll i = s; i >= e; i--)
+#define forn(i, n) for (ll i = 0; i < n; i++)
+#define forsn(i, s, e) for (ll i = s; i < e; i++)
+#define rforn(i, s) for (ll i = s; i >= 0; i--)
+#define rforsn(i, s, e) for (ll i = s; i >= e; i--)
 #define mp make_pair
 #define pb push_back
 #define fi first
 #define se second
-#define nl cout<<endl
-#define arrin(i,arr,n); for(int i=0;i<n;i++){ cin >> arr[i]; }
-#define arrout(i,arr,n); for(int i=0;i<n;i++){ cout << arr[i]; }
+#define nl cout << endl
+#define arrin(i, arr, n)        \
+    ;                           \
+    for (int i = 0; i < n; i++) \
+    {                           \
+        cin >> arr[i];          \
+    }
+#define arrout(i, arr, n)       \
+    ;                           \
+    for (int i = 0; i < n; i++) \
+    {                           \
+        cout << arr[i];         \
+    }
 #define INF 2e18
-#define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
+#define fast_cin()                    \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL);                    \
+    cout.tie(NULL)
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
-int main(){
+int main()
+{
     fast_cin();
-    int t;
-    cin>>t;
-    while(t--){
-    
-        string p,q;
-        cin>>p>>q;
-        int n=p.length();
-        int m=q.length();
-        for(int i=m-1;i>=0;i++){
-            for(int j=n-1;j>=0;j++){
-                
+    int tc;
+	cin>>tc;
+	while(tc--){
+        string word,res;
+        cin>>word>>res;
+        unordered_map<char,int> mp,req;
+        for(auto x: res) req[x]++;
+        bool flag = true;
+        int i=word.size()-1, j=res.size()-1;
+        while(j>=0 and i>=0){
+            mp[word[i]]++;
+            if(word[i]==res[j]){
+                if(mp[word[i]]>req[word[i]]){
+                    flag = false; 
+                    break;
+                }
+                i--,j--;
             }
+            else i--;
         }
-    }
+        if(j>=0) flag = false;
+        for(auto c: res){
+            if(mp[c]<req[c]) flag = false;
+        }
+        if(flag) cout<<"YES"<<endl;
+        else cout<<"NO"<<endl;
+	}
     return 0;
 }
