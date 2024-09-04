@@ -7,6 +7,8 @@
         "map": "cpp",
         "random": "cpp",
         "string": "cpp",
-        "array": "cpp"
+        "array": "cpp",
+        "limits": "cpp",
+        "valarray": "cpp"
     }
 }

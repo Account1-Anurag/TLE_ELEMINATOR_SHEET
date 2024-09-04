@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <bits/stdc++.h> 
 #include <complex>
 #include <queue>
 #include <set>
@@ -37,40 +37,29 @@ double eps = 1e-12;
 #define fi first
 #define se second
 #define nl cout<<endl
-#define bin(i,b,n); for(int i=0;i<n;i++){ cin >> b[i]; }
-#define bout(i,b,n); for(int i=0;i<n;i++){ cout << b[i]; }
+#define arrin(i,arr,n); for(int i=0;i<n;i++){ cin >> arr[i]; }
+#define arrout(i,arr,n); for(int i=0;i<n;i++){ cout << arr[i]; }
 #define INF 2e18
 #define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
-int main(){
+int main() {
     fast_cin();
     int t;
-    cin>>t;
-    while(t--){
-        int n;
-        cin>>n;
-        char b[n][4];
-        for(int i=0;i<n;i++){
-            for(int j=0;j<4;j++){
-                cin>>b[i][j];
-            }
+    cin >> t;
+    while(t--) {
+        long long a, b;
+        cin >> a >> b;
+        long long v = abs(a - b);
+        // cout<<v<<"\n";
+        if (v == 0) {
+            cout << "0 0\n";
+        } else {
+            ll s = a % v;
+            ll p = v - s;
+            p = min(p, s);
+            cout << v << " " << p << "\n";
         }
-        vector<int>ans;
-        for(int i=0;i<n;i++){
-            for(int j=0;j<4;j++){
-                if(b[i][j]=='#'){
-                    ans.push_back(j+1);
-                    break;
-                }
-            }
-        }
-        reverse(ans.begin(),ans.end());
-        for(int i=0;i<n;i++){
-            cout<<ans[i]<<" ";
-        }
-        cout<<"\n";
     }
     return 0;
 }
-
