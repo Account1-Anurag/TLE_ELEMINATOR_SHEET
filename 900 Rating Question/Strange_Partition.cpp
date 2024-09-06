@@ -65,16 +65,16 @@ int main()
     {
         ll n , x;
         cin>>n>>x; 
-        ll sum = 0;ll mini = 0;
+        ll sum = 0;ll maxi = 0;
         for(int i=0;i<n;i++){
             ll a; cin>>a;
             sum+=a;
-            if(a%x==0) mini+=(a/x);
-            else mini+=(a/x)+1;
+            if(a%x==0) maxi+=(a/x);
+            else maxi+=(a/x)+1;
         }
         if(sum%x==0) cout<<sum/x<<" ";
         else cout<<(sum/x)+1<<" ";
-        cout<<mini<<endl;
+        cout<<maxi<<endl;
 	
     }
     return 0;
