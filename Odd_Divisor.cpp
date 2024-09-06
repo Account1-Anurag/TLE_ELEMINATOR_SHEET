@@ -49,7 +49,7 @@ int main(){
     cin>>t;
     while(t--){
         ll n;
-        cin>>n;
+        cin>>n;     
         while(n>0){
             if(n%2==0){
                 n=n/2;
