@@ -6,10 +6,10 @@ int main() {
     ios_base::sync_with_stdio(false); 
     cin.tie(NULL);
     
-    int t;
-    cin >> t;
+    int tc;
+    cin >> tc;
     
-    while(t--) {
+    while(tc--) {
          int n , k;
         cin>>n>>k;int arr[n*k];
         for(int i=0;i<n*k;i++){
