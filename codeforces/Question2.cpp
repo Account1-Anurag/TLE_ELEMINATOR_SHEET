@@ -56,7 +56,7 @@ int main(){
                 cin>>b[i][j];
             }
         }
-        vector<int>ans;
+        vector<int>ans(n,0);
         for(int i=0;i<n;i++){
             for(int j=0;j<4;j++){
                 if(b[i][j]=='#'){
