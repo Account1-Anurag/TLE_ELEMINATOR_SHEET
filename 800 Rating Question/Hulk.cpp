@@ -62,6 +62,6 @@ int main(){
     }else{
         ans+="I hate it";
     }
-    cout<<ans<<"\n";
+    cout<<ans;
     return 0;
 }
