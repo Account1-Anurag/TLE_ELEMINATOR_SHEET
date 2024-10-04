@@ -49,19 +49,19 @@ int main(){
     cin>>n;
     string a="I hate that ";
     string b="I love that ";
-    string ans="";
+    string value="";
     for(int i=1;i<n;i++){
         if(i%2==0){
-            ans+=b;
+            value+=b;
         }else{
-            ans+=a;
+            value+=a;
         }
     }
     if(n%2==0){
-        ans+="I love it";
+        value+="I love it";
     }else{
-        ans+="I hate it";
+        value+="I hate it";
     }
-    cout<<ans;
+    cout<<value;
     return 0;
 }
