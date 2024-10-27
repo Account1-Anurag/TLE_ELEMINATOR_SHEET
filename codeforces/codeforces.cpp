@@ -45,6 +45,14 @@ double eps = 1e-12;
 #define sz(x) ((ll)(x).size())
 int main(){
     fast_cin();
-    
+    ll n;
+    cin>>n;
+    ll sum=0;
+    if(n%2==0){
+            sum=n/2;
+        }else{
+            sum=(-1)*(n/2+1);
+        }
+    cout<<sum;
     return 0;
 }
