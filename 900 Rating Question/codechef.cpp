@@ -1,32 +1,12 @@
 #include <iostream>
-#include <vector>
-#include <cmath>
-
 using namespace std;
-
 int main() {
     int t;
-    cin >> t;
-    
-    while (t--) {
-        int n, k;
-        cin >> n >> k;
-        
-        if (k == 0) {
-            cout << 0 << endl;
-            continue;
-        }
-        
-        int diagonals = 0;
-        
-        if (k <= n) {
-            diagonals = k;
-        } else {
-            diagonals = (k + n - 1) / n; // equivalent to ceil(k / n)
-        }
-        
-        cout << diagonals << endl;
+    cin>>t;
+    while(t--){
+        long long n,m,r,c;
+        cin>>n>>m>>r>>c;
+      cout<< ((n-r)*m)-(n-r)+(n*m)-((r-1)*m+c)<<endl;
     }
-    
     return 0;
 }
