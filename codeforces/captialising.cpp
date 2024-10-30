@@ -1,9 +1,9 @@
 #include<iostream>
 using namespace std;
 int main(){
-    string x;
-    cin>>x;
-    x[0]=toupper(x[0]);
-    cout<<x<<"\n";
+    string ans;
+    cin>>ans;
+    ans[0]=toupper(ans[0]);
+    cout<<ans<<"\n";
     return 0;
 }
