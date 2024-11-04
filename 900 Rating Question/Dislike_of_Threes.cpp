@@ -3,12 +3,13 @@
 using namespace std;
 
 bool isLiked(int number) {
-    // Polycarp dislikes numbers divisible by 3 or ending with digit 3
+    // Polycarp dislikes numbers divisible by 3 or ending with digit 3 add some value
     return (number % 3 != 0 && number % 10 != 3);
 }
 
 int main() {
     int t;
+    int m;
     cin >> t;
     vector<int> k(t);
     int max_k = 0;
